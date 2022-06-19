@@ -5,16 +5,17 @@ const { listen } = require("express/lib/application")
 const req = require("express/lib/request")
 const res = require("express/lib/response")
 const tools = require("./tools")
-
 const app = express()
+var cors = require ('cors')
 
 //permite acceder facilmente a los datos del formato
 app.use(express.json())
+app.use(cors())
 
 
 //punto para probar el servidor
 app.get("/",(request, response) =>{
-    response.send("<h1>Hola</h1>")
+    response.send("<h1>Servidor corriendo en puerto 3001</h1>")
 })
 
 //Agregar nota
